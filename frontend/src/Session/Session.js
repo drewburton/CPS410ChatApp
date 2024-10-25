@@ -4,6 +4,7 @@ import { getAuth, signOut } from 'firebase/auth'; // Adjust the path as needed
 import { doc, getDoc } from 'firebase/firestore';
 import './Session.css';
 import Auth from '../Auth/Auth';
+import Friends from '../Friends/Friends';
 
 function Session({ isOpen, onLogout, setAuthOpen }) {
   const [username, setUsername] = useState(''); // Replace with actual username logic
@@ -48,7 +49,8 @@ function Session({ isOpen, onLogout, setAuthOpen }) {
     <header className="Session-header">
       <div className="user-info">
         <h1 style={{ color: 'lavender', fontSize: '14px' }}>
-          Welcome{username ? ` back, ${username}` : ''}!
+          {/* Welcome{username ? ` back, ${username}` : ''}! */}
+          <Friends/>
         </h1>
       </div>
     </header>
