@@ -1,0 +1,16 @@
+friends
+                                                           
+    thrown: "Exceeded timeout of 5000 ms for a test.       
+    Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test."                   
+                                                           
+      2 | import Friends from './Friends';
+      3 | import {act} from 'react';
+    > 4 | test('friends', async function() {
+        | ^
+      5 |     
+      6 |   const element = render(<Friends />);
+      7 |   const container=element.container;
+
+      at Object.<anonymous> (src/Friends/Friends.test.js:4:1)
+
+      
