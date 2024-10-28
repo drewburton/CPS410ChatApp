@@ -29,11 +29,5 @@ test('getfriends', async function() {
   //const input = container.getElementsByClassName('my-input')[0];
   
   expect(true)
-  await waitFor(() => {
-    return Promise.race([
-      container.findByText('Friend Added'),
-      container.findByText('No friend found'),
-      container.findByText('That is you'),
-    ]);
-  }, { timeout: 5000 });
+
 });

@@ -70,6 +70,7 @@ public class WebAppController {
 
 	@PostMapping("/addfriend")
     public String addfriend(@RequestBody Message message) {
+        
 		return "No friend found";
 	}
 }

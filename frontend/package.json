@@ -1,6 +1,7 @@
 {
   "name": "folder",
   "version": "1.0.0",
+  "proxy": "http://localhost:8080",
   "private": true,
   "dependencies": {
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.14.4",
