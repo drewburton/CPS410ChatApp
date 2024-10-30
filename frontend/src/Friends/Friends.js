@@ -9,6 +9,7 @@ function Friends() {
   
   function addFriend(){
     //do friend bs...
+    try{
         const response = fetch('http://localhost:8080/addfriend', {
             method: 'POST',
             headers: {
@@ -22,8 +23,6 @@ function Friends() {
           r.text().then(function(result){
 
           
-          console.log("XX" +JSON.stringify(result));
-          
           if(result=="Friend Added"){
             setfriendresult("Friend Added");
           }if(result=="You've already added that friend"){
@@ -35,29 +34,30 @@ function Friends() {
           }
         })
         }else{
-          //damn
+          setfriendresult("Connection Failed");
         }
       
         }).then(function(data) {
-          // `data` is the parsed JSON data, not a Promise
-          console.log(data);
-      })};
+      })}catch(e){
+        setfriendresult("Connection Failed");
+      };}
   
   return (
-    <div className="Friends">
-      <header className="Friends-header">
-        <p>
-          Add friends: <input
+<div className="Friends">
+  <header className="Friends-header">
+    <div className="input-container">
+      <span>Add friends:</span>
+      <input
         className="my-input"
         type="text"
         value={inputValue}
         onChange={handleInputChange}
       />
-          <p className='friendaddresult'>{friendresult}</p>
-          <button onClick={addFriend}>Add</button>
-        </p>
-      </header>
     </div>
+    <p className='friendaddresult'>{friendresult}</p>
+    <button onClick={addFriend}>Add</button>
+  </header>
+</div>
   );
 }
 
