@@ -26,7 +26,7 @@ const firestore = getFirestore(app);
 const auth = getAuth(app);
 
 onAuthStateChanged(auth, user => {
-  if(user != null){
+  if (user != null) {
     console.log('Logged in!');
   } else {
     console.log('No user');

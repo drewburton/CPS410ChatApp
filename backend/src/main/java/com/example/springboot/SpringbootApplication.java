@@ -12,7 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 
-@SpringBootApplication(exclude ={DataSourceAutoConfiguration.class})
+
+@SpringBootApplication
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
