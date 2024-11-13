@@ -9,7 +9,6 @@ public class Friend {
      *
      */
     @Id
-    @GeneratedValue(strategy = "")
     private Long id;
     private String name;
     private String email;

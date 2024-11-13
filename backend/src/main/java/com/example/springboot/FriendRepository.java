@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FriendRepository extends JpaRepository<Friend, Long> {
+public interface FriendRepository {
 
     Friend save(Friend friend);
 

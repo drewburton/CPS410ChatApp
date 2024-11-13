@@ -12,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
-@EnableJpaRepositories("com.example.springboot")
 @EntityScan("com.example.springboot")
 @SpringBootApplication
 @ComponentScan("com.example.springboot")
