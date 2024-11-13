@@ -5,14 +5,17 @@ import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
-
-@SpringBootApplication(exclude ={DataSourceAutoConfiguration.class})
+@EnableJpaRepositories("com.example.springboot")
+@EntityScan("com.example.springboot")
+@SpringBootApplication
+@ComponentScan("com.example.springboot")
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
@@ -38,7 +41,7 @@ public class SpringbootApplication {
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
-			public void addCorsMappings(CorsRegistry registry) {
+			public void addCorsMappings(@SuppressWarnings("null") CorsRegistry registry) {
 				registry.addMapping("/").allowedOrigins("*");
 			}
 		};
